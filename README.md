@@ -1,10 +1,10 @@
 # WaterMyPlantsKotlin
 A Jetpack Compose example using new experimental animations. 
 
-Do you want to use declarative UI like SwiftUI or Flutter, but even more readable and in Kotlin? Well now you can. That's what Jetpack Compose is. 
+Do you want to use declarative UI like SwiftUI or Flutter, but even more readable and in Kotlin? Well now you can. That's what Jetpack Compose is! 
 
 With Accompanist-Navigation-Animation you can add navigation and box transitions easily. This project uses navigation transitions between the dashboard and
-splash screen, and Animated Visibility transitions to chane the dashboard content when you change the bottom menu item.  
+splash screen, and Animated Visibility transitions to change the dashboard content when you change the bottom menu item.  
 
 # Video
  [video](https://github.com/edunnett/WaterMyPlantsKotlin/blob/main/screenshots/Screen%20Recording%202022-07-19%20at%2011.56.36%20AM.mov?raw=true) 
