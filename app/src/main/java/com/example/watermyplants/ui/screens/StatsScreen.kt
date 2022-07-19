@@ -2,11 +2,9 @@ package com.example.watermyplants.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Colors
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -14,11 +12,11 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.watermyplants.ui.components.CustomSpacer
-import com.example.watermyplants.ui.components.HeadingSpacer
 import com.example.watermyplants.R
 import com.example.watermyplants.data.HouseplantData
 import com.example.watermyplants.ui.chartColors
+import com.example.watermyplants.ui.components.CustomSpacer
+import com.example.watermyplants.ui.components.HeadingSpacer
 import me.bytebeats.views.charts.pie.PieChart
 import me.bytebeats.views.charts.pie.PieChartData
 import me.bytebeats.views.charts.pie.render.SimpleSliceDrawer
@@ -31,7 +29,7 @@ fun StatsScreen() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(22.dp,22.dp,22.dp,0.dp)
+            .padding(22.dp, 22.dp, 22.dp, 0.dp)
     ) {
 
         Column {
@@ -90,7 +88,7 @@ fun LegendView() {
         {
             Box(
                 Modifier
-                    .background(color = chartColors[2])
+                    .background(color = chartColors[3])
                     .width(30.dp)
                     .height(20.dp)
             )
@@ -102,7 +100,7 @@ fun LegendView() {
         {
             Box(
                 Modifier
-                    .background(color = chartColors[3])
+                    .background(color = chartColors[2])
                     .width(30.dp)
                     .height(20.dp)
             )
@@ -128,11 +126,11 @@ fun PieChartView() {
                 ),
                 PieChartData.Slice(
                     HouseplantData.list.filter { it.status == "Almost Dead" }.size.toFloat(),
-                    chartColors[2]
+                    chartColors[3]
                 ),
                 PieChartData.Slice(
                     HouseplantData.list.filter { it.status == "Dead" }.size.toFloat(),
-                    chartColors[3]
+                    chartColors[2]
                 )
             )
         ),

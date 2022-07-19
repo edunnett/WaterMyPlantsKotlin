@@ -1,5 +1,6 @@
 package com.example.watermyplants.ui
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,16 +19,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+
 import com.example.watermyplants.R
 import com.example.watermyplants.data.Houseplant
 import com.example.watermyplants.data.HouseplantData
 import com.example.watermyplants.ui.components.HeadingSpacer
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
+@ExperimentalAnimationApi
 @Preview
 @Composable
 fun _HomeScreenPreview() {
-    HomeScreen(rememberNavController())
+    HomeScreen(rememberAnimatedNavController())
 }
 
 @Composable
