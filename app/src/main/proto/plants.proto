@@ -1,0 +1,18 @@
+// Not actually used. I put the data in HouseplantsData.kt
+
+syntax = "proto3";
+
+option java_package = "com.example.watermyplants";
+option java_multiple_files = true;
+
+message Houseplant
+{
+    string name = 1;
+    string status = 2;
+    string imageUrl = 3;
+}
+
+message Houseplants
+{
+    repeated Houseplant houseplant = 1;
+}
