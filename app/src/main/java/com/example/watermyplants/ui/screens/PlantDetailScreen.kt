@@ -7,7 +7,6 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -20,12 +19,12 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.watermyplants.data.Houseplant
-import com.example.watermyplants.ui.components.CustomTopAppBar
-import com.example.watermyplants.ui.components.HeadingSpacer
+import com.example.watermyplants.Houseplant
 import com.example.watermyplants.R
 import com.example.watermyplants.data.HouseplantProvider
 import com.example.watermyplants.ui.colorPrimary
+import com.example.watermyplants.ui.components.CustomTopAppBar
+import com.example.watermyplants.ui.components.HeadingSpacer
 import com.example.watermyplants.ui.ghost_white
 
 

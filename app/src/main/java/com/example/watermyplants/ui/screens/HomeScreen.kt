@@ -19,9 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-
+import com.example.watermyplants.Houseplant
 import com.example.watermyplants.R
-import com.example.watermyplants.data.Houseplant
 import com.example.watermyplants.data.HouseplantData
 import com.example.watermyplants.ui.components.HeadingSpacer
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -34,11 +33,11 @@ fun _HomeScreenPreview() {
 }
 
 @Composable
-fun HomeScreen(navController:NavController) {
+fun HomeScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(22.dp,22.dp,22.dp,0.dp)
+            .padding(22.dp, 22.dp, 22.dp, 0.dp)
     ) {
 
         Column {
@@ -58,27 +57,27 @@ fun HomeScreen(navController:NavController) {
 }
 
 @Composable
-private fun MyPlantList( navController:NavController) {
+private fun MyPlantList(navController: NavController) {
 
     LazyColumn(
         modifier = Modifier.fillMaxWidth(),
 
         ) {
         items(HouseplantData.list.size) {
-            PlantCard(HouseplantData.list[it],navController = navController)
+            HouseplantData.list[it]?.let { it1 -> PlantCard(it1, navController = navController) }
         }
     }
 }
 
 @Composable
-private fun PlantCard(plant: Houseplant, navController:NavController) {
+private fun PlantCard(plant: Houseplant, navController: NavController) {
     Card(
         shape = RoundedCornerShape(14.dp),
         backgroundColor = Color.White,
         modifier = Modifier
             .padding(10.dp)
             .fillMaxWidth()
-            .clickable (onClick = {
+            .clickable(onClick = {
                 navController.navigate("plantDetails/${plant.name}")
             })
     ) {
@@ -112,7 +111,8 @@ private fun PlantCard(plant: Houseplant, navController:NavController) {
                 coil.compose.AsyncImage(
                     model = plant.imageUrl,
                     contentDescription = null,
-                    placeholder = painterResource(id = R.drawable.plant
+                    placeholder = painterResource(
+                        id = R.drawable.plant
                     ),
 
                     modifier = Modifier

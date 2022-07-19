@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import com.example.watermyplants.data.HouseplantData
 import com.example.watermyplants.navigation.Destination
 import com.example.watermyplants.ui.DashboardScreen
+import com.example.watermyplants.ui.SplashScreen
 import com.example.watermyplants.ui.screens.PlantDetailScreen
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
@@ -24,6 +25,9 @@ fun ComposeApp() {
 
     MaterialTheme {
         AnimatedNavHost(navController = navController, startDestination = Destination.Splash) {
+            composable(Destination.Splash) {
+                SplashScreen(navController = navController)
+            }
             composable(Destination.Dashboard,
                 enterTransition = {
                     fadeIn()
@@ -50,7 +54,7 @@ fun ComposeApp() {
             ) { backStackEntry ->
 
                 var plant = HouseplantData.list.filter {
-                    it.name == backStackEntry.arguments?.getString("name")
+                    it != null && it.name == backStackEntry.arguments?.getString("name")
                 }.firstOrNull()
 
                 // You can navigate to a null plant, it will just

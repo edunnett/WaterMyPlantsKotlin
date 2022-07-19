@@ -67,7 +67,7 @@ fun CustomBottomBar(selectedIndex: MutableState<Int>) {
                 .padding(0.dp)
                 .height(75.dp)
         ) {
-            listItems.forEachIndexed { index, label ->
+            listItems.forEachIndexed { index, _ ->
                 val isSelected = selectedIndex.value == index
                 BottomNavigationItem(
                     icon = {

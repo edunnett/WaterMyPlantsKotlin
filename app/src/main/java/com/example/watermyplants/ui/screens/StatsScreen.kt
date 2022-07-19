@@ -117,19 +117,23 @@ fun PieChartView() {
         pieChartData = PieChartData(
             slices = listOf(
                 PieChartData.Slice(
-                    HouseplantData.list.filter { it.status == "Alive" }.size.toFloat(),
+                    HouseplantData.list.filter { it != null && it.status == "Alive" }
+                        .size.toFloat(),
                     chartColors[0]
                 ),
                 PieChartData.Slice(
-                    HouseplantData.list.filter { it.status == "Healthy" }.size.toFloat(),
+                    HouseplantData.list.filter { it != null && it.status == "Healthy" }
+                        .size.toFloat(),
                     chartColors[1]
                 ),
                 PieChartData.Slice(
-                    HouseplantData.list.filter { it.status == "Almost Dead" }.size.toFloat(),
+                    HouseplantData.list.filter { it != null && it.status == "Almost Dead" }
+                        .size.toFloat(),
                     chartColors[3]
                 ),
                 PieChartData.Slice(
-                    HouseplantData.list.filter { it.status == "Dead" }.size.toFloat(),
+                    HouseplantData.list.filter { it != null && it.status == "Dead" }
+                        .size.toFloat(),
                     chartColors[2]
                 )
             )
